@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet href="compatibility_result.xsl" type="text/xsl"?><Result command_line_args="cts -m CtsJniTestCases --skip-preconditions" devices="GFEDCBA0987654321" end="1516102398557" end_display="Tue Jan 16 19:33:18 CST 2018" host_name="zhouyong-OptiPlex-3020" java_vendor="Oracle Corporation" java_version="1.8.0_91" os_arch="amd64" os_name="Linux" os_version="3.19.0-25-generic" report_version="5.0" start="1516102059821" start_display="Tue Jan 16 19:27:39 CST 2018" suite_build_number="4452367" suite_name="CTS" suite_plan="cts" suite_version="8.0_r4">  <Build build_abi="arm64-v8a" build_abi2="" build_abis="arm64-v8a,armeabi-v7a,armeabi" build_abis_32="armeabi-v7a,armeabi" build_abis_64="arm64-v8a" build_board="mt2712" build_brand="mediatek" build_device="mt2712" build_fingerprint="mediatek/car_mt2712/mt2712:8.0.0/OPR1.170623.032/zhouyo01031849:userdebug/test-keys" build_id="OPR1.170623.032" build_manufacturer="unknown" build_model="Car on mt2712" build_product="car_mt2712" build_reference_fingerprint="" build_serial="GFEDCBA0987654321" build_tags="test-keys" build_type="userdebug" build_version_base_os="" build_version_incremental="eng.zhouyo.20180103.184949" build_version_release="8.0.0" build_version_sdk="26" build_version_security_patch="2017-11-05"/>  <Summary failed="0" modules_done="2" modules_total="2" pass="128"/>  <Module abi="armeabi-v7a" done="true" name="CtsJniTestCases" pass="64" runtime="957">    
+        <TestCase name="android.jni.cts.JniCTest">      
+            <Test name="testEverything" result="pass"/>      
+        </TestCase>    
+        <TestCase name="android.jni.cts.JniCppTest">      
+            <Test name="testEverything" result="pass"/>      
+        </TestCase>    
+        <TestCase name="android.jni.cts.JniInstanceTest">      
+            <Test name="test_nop" result="pass"/>      
+            <Test name="test_returnBoolean" result="pass"/>      
+            <Test name="test_returnByte" result="pass"/>      
+            <Test name="test_returnChar" result="pass"/>      
+            <Test name="test_returnDouble" result="pass"/>      
+            <Test name="test_returnFloat" result="pass"/>      
+            <Test name="test_returnInt" result="pass"/>      
+            <Test name="test_returnLong" result="pass"/>      
+            <Test name="test_returnNull" result="pass"/>      
+            <Test name="test_returnShort" result="pass"/>      
+            <Test name="test_returnShortArray" result="pass"/>      
+            <Test name="test_returnString" result="pass"/>      
+            <Test name="test_returnStringArray" result="pass"/>      
+            <Test name="test_returnThis" result="pass"/>      
+            <Test name="test_takeBoolean" result="pass"/>      
+            <Test name="test_takeByte" result="pass"/>      
+            <Test name="test_takeChar" result="pass"/>      
+            <Test name="test_takeCoolHandLuke" result="pass"/>      
+            <Test name="test_takeDouble" result="pass"/>      
+            <Test name="test_takeFloat" result="pass"/>      
+            <Test name="test_takeInt" result="pass"/>      
+            <Test name="test_takeIntLong" result="pass"/>      
+            <Test name="test_takeLong" result="pass"/>      
+            <Test name="test_takeLongInt" result="pass"/>      
+            <Test name="test_takeNull" result="pass"/>      
+            <Test name="test_takeOneOfEach" result="pass"/>      
+            <Test name="test_takeShort" result="pass"/>      
+            <Test name="test_takeString" result="pass"/>      
+            <Test name="test_takeThis" result="pass"/>      
+        </TestCase>    
+        <TestCase name="android.jni.cts.JniStaticTest">      
+            <Test name="test_classload" result="pass"/>      
+            <Test name="test_linker_namespaces" result="pass"/>      
+            <Test name="test_linker_namespaces_classloaders" result="pass"/>      
+            <Test name="test_nop" result="pass"/>      
+            <Test name="test_returnBoolean" result="pass"/>      
+            <Test name="test_returnByte" result="pass"/>      
+            <Test name="test_returnChar" result="pass"/>      
+            <Test name="test_returnDouble" result="pass"/>      
+            <Test name="test_returnFloat" result="pass"/>      
+            <Test name="test_returnInstance" result="pass"/>      
+            <Test name="test_returnInt" result="pass"/>      
+            <Test name="test_returnLong" result="pass"/>      
+            <Test name="test_returnNull" result="pass"/>      
+            <Test name="test_returnShort" result="pass"/>      
+            <Test name="test_returnShortArray" result="pass"/>      
+            <Test name="test_returnString" result="pass"/>      
+            <Test name="test_returnStringArray" result="pass"/>      
+            <Test name="test_returnThisClass" result="pass"/>      
+            <Test name="test_takeBoolean" result="pass"/>      
+            <Test name="test_takeByte" result="pass"/>      
+            <Test name="test_takeChar" result="pass"/>      
+            <Test name="test_takeCoolHandLuke" result="pass"/>      
+            <Test name="test_takeDouble" result="pass"/>      
+            <Test name="test_takeFloat" result="pass"/>      
+            <Test name="test_takeInt" result="pass"/>      
+            <Test name="test_takeIntLong" result="pass"/>      
+            <Test name="test_takeLong" result="pass"/>      
+            <Test name="test_takeLongInt" result="pass"/>      
+            <Test name="test_takeNull" result="pass"/>      
+            <Test name="test_takeOneOfEach" result="pass"/>      
+            <Test name="test_takeShort" result="pass"/>      
+            <Test name="test_takeString" result="pass"/>      
+            <Test name="test_takeThisClass" result="pass"/>      
+        </TestCase>    
+    </Module></Result>

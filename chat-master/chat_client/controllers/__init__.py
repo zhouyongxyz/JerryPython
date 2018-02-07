@@ -1,0 +1,1 @@
+from chat_client.controllers.AuthController import AuthController

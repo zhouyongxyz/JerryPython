@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet href="compatibility_result.xsl" type="text/xsl"?><Result command_line_args="cts -m CtsSpeechTestCases -t android.speech.tts.cts.TextToSpeechTest#testSpeak --skip-preconditions" devices="GFEDCBA0987654321" end="1516018281923" end_display="Mon Jan 15 20:11:21 CST 2018" host_name="zhouyong-OptiPlex-3020" java_vendor="Oracle Corporation" java_version="1.8.0_91" os_arch="amd64" os_name="Linux" os_version="3.19.0-25-generic" report_version="5.0" start="1516017835849" start_display="Mon Jan 15 20:03:55 CST 2018" suite_build_number="4452367" suite_name="CTS" suite_plan="cts" suite_version="8.0_r4">  <Build build_abi="arm64-v8a" build_abi2="" build_abis="arm64-v8a,armeabi-v7a,armeabi" build_abis_32="armeabi-v7a,armeabi" build_abis_64="arm64-v8a" build_board="mt2712" build_brand="mediatek" build_device="mt2712" build_fingerprint="mediatek/car_mt2712/mt2712:8.0.0/OPR1.170623.032/zhouyo01031849:userdebug/test-keys" build_id="OPR1.170623.032" build_manufacturer="unknown" build_model="Car on mt2712" build_product="car_mt2712" build_reference_fingerprint="" build_serial="GFEDCBA0987654321" build_tags="test-keys" build_type="userdebug" build_version_base_os="" build_version_incremental="eng.zhouyo.20180103.184949" build_version_release="8.0.0" build_version_sdk="26" build_version_security_patch="2017-11-05"/>  <Summary failed="2" modules_done="2" modules_total="2" pass="0"/>  <Module abi="arm64-v8a" done="true" name="CtsSpeechTestCases" pass="0" runtime="30245">    
+        <TestCase name="android.speech.tts.cts.TextToSpeechTest">      
+            <Test name="testSpeak" result="fail">        
+                <Failure message="junit.framework.AssertionFailedError: speak() completion timeout">          
+                    <StackTrace>junit.framework.AssertionFailedError: speak() completion timeout
+at junit.framework.Assert.fail(Assert.java:50)
+at junit.framework.Assert.assertTrue(Assert.java:20)
+at android.speech.tts.cts.TextToSpeechTest.testSpeak(TextToSpeechTest.java:142)
+at java.lang.reflect.Method.invoke(Native Method)
+at junit.framework.TestCase.runTest(TestCase.java:168)
+at junit.framework.TestCase.runBare(TestCase.java:134)
+at junit.framework.TestResult$1.protect(TestResult.java:115)
+at android.support.test.internal.runner.junit3.AndroidTestResult.runProtected(AndroidTestResult.java:77)
+at junit.framework.TestResult.run(TestResult.java:118)
+at android.support.test.internal.runner.junit3.AndroidTestResult.run(AndroidTestResult.java:55)
+at junit.framework.TestCase.run(TestCase.java:124)
+at android.support.test.internal.runner.junit3.NonLeakyTestSuite$NonLeakyTest.run(NonLeakyTestSuite.java:63)
+at android.support.test.internal.runner.junit3.AndroidTestSuite$2.run(AndroidTestSuite.java:111)
+at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:457)
+at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1162)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:636)
+at java.lang.Thread.run(Thread.java:764)
+</StackTrace>          
+                </Failure>        
+            </Test>      
+        </TestCase>    
+    </Module></Result>
