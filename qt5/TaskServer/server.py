@@ -12,6 +12,7 @@ import socketserver
 import _thread
 from serverui import Ui_MainWindow
 from TcpServer import TcpServer
+from mysqldb import MySQLUtil
 
 PORT = 9008
 class TaskServerWindow(QMainWindow):
@@ -38,6 +39,8 @@ class TaskServerWindow(QMainWindow):
                                  "Failed to start server: {0}".format(self.tcpServer.errorString()))
             self.close()
             return
+        # init the db
+        self.db = MySQLUtil()
 
     def initUI(self):
         #init tree view
@@ -53,7 +56,8 @@ class TaskServerWindow(QMainWindow):
         #     print("hello")
         cmd = self.ui.edit_cmd.text()
         self.tcpServer.sendMessage(self.ui.content_ipaddr.text(),cmd)
-        self.showMessage(cmd, True)
+        self.db.saveMessage(self.ui.content_ipaddr.text(),cmd,True)
+        self.showMessage(self.ui.content_ipaddr.text())
         print("cmd = " + cmd)
 
     def btnAddScriptFile(self):
@@ -67,6 +71,9 @@ class TaskServerWindow(QMainWindow):
         if re.match( r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}', content):
             print("ip : " + content)
             self.ui.content_ipaddr.setText(content)
+            self.showMessage(content)
+
+
 
 
     def addSocketClient(self,client):
@@ -83,21 +90,24 @@ class TaskServerWindow(QMainWindow):
 
     def recvMessage(self, ipAddr, msg):
         currentClient = self.ui.content_ipaddr.text()
+        self.db.saveMessage(ipAddr,msg,False)
         if currentClient == ipAddr:
-            self.showMessage(msg,False)
+            self.showMessage(ipAddr)
         pass
 
-    def showMessage(self,msg,server=True):
-        content = self.ui.content_status.toPlainText()
-        if server:
-            msg = "server-> : " + msg
-        else:
-            msg = "client-> : " + msg
-        if content == "":
-            content = msg
-        else:
-            content = content + "\n" + msg
-        self.ui.content_status.setText(content)
+    def showMessage(self,ipAddr):
+        print("showMessage:{}".format(ipAddr))
+        messages = self.db.getMessages(ipAddr)
+        statusStr = "";
+        if messages:
+            for msg in messages:
+                if msg['isserver'] == 1:
+                    statusStr += "server[%s] -> :" % msg['date']
+                else:
+                    statusStr += "client[%s] -> :" % msg['date']
+                statusStr += msg['msg'] + " \n"
+
+        self.ui.content_status.setText(statusStr)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

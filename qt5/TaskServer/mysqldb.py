@@ -51,12 +51,12 @@ class MySQLUtil():
             self.cursor.execute(sql)
             # commit the operation
             results = self.cursor.fetchall()
-            msg = {}
             for row in results:
-                msg['ipaddr'] = row[0]
-                msg['msg'] = row[1]
-                msg['isserver'] = row[2]
-                msg['date'] = row[3]
+                msg = {}
+                msg['ipaddr'] = row[1]
+                msg['msg'] = row[2]
+                msg['isserver'] = row[3]
+                msg['date'] = row[4]
                 messages.append(msg)
 
             return messages
