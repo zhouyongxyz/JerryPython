@@ -17,6 +17,7 @@ class TcpSocket(QTcpSocket):
         self.error.connect(self.socketHasError)
         self.nextBlockSize = 0
         self.clientIp = ""
+        # server = TcpServer object
         self.server = parent
         #print("client addr = {}".format(str(self.peerName())))
 
