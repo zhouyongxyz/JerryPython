@@ -13,6 +13,7 @@ import _thread
 from serverui import Ui_MainWindow
 from TcpServer import TcpServer
 from mysqldb import MySQLUtil
+from sqlite3db import Sqlite3Util
 
 PORT = 9008
 class TaskServerWindow(QMainWindow):
@@ -40,7 +41,8 @@ class TaskServerWindow(QMainWindow):
             self.close()
             return
         # init the db
-        self.db = MySQLUtil()
+        # self.db = MySQLUtil()
+        self.db = Sqlite3Util()
 
     def initUI(self):
         #init tree view
