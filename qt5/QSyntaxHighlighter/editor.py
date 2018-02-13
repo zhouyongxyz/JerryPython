@@ -7,7 +7,6 @@ from PyQt5.QtCore import (QEvent, QFile, QFileInfo, QIODevice, QRegExp,
 from PyQt5.QtWidgets import (QAction, QApplication,  QFileDialog,
                              QMainWindow, QMessageBox, QTextEdit)
 from PyQt5.QtGui import QFont, QIcon,QColor,QKeySequence,QSyntaxHighlighter,QTextCharFormat,QTextCursor
-#import qrc_resources
 
 
 __version__ = "1.1.0"
@@ -164,8 +163,7 @@ class PythonHighlighter(QSyntaxHighlighter):
 
 
     def rehighlight(self):
-        QApplication.setOverrideCursor(QCursor(
-                                                    Qt.WaitCursor))
+        QApplication.setOverrideCursor(QCursor(Qt.WaitCursor))
         QSyntaxHighlighter.rehighlight(self)
         QApplication.restoreOverrideCursor()
 

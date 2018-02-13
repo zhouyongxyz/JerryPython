@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_main">
+      <item>
+       <widget class="QTreeWidget" name="clientTreeWidget">
+        <column>
+         <property name="text">
+          <string>连接设备</string>
+         </property>
+        </column>
+        <item>
+         <property name="text">
+          <string>网络1</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>1.2.3.4</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>192.168.65.65</string>
+          </property>
+         </item>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTabWidget" name="contentTabWiget">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>2</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="currentIndex">
+         <number>1</number>
+        </property>
+        <widget class="QWidget" name="tab_1">
+         <attribute name="title">
+          <string>Client 1</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_content">
+            <item>
+             <widget class="QLabel" name="content_ipaddr">
+              <property name="text">
+               <string> 1.2.3.4</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="content_status"/>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_content_2">
+              <item>
+               <widget class="QLabel" name="label_2">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Cmd:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="edit_cmd">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>2</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_file">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>+</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_send">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Send</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_2">
+         <attribute name="title">
+          <string>Client 2</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_editor">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_editor">
+              <item>
+               <spacer name="horizontalSpacer">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>298</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_run">
+                <property name="text">
+                 <string>Run</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="code_editor"/>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen"/>
+    <addaction name="actionClose_C"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+    <addaction name="actionAbout_Us"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuAbout"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionOpen">
+   <property name="text">
+    <string>Open(&amp;O)</string>
+   </property>
+  </action>
+  <action name="actionClose_C">
+   <property name="text">
+    <string>Close(&amp;C)</string>
+   </property>
+  </action>
+  <action name="actionAbout_Us">
+   <property name="text">
+    <string>About Us</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btn_send</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>734</x>
+     <y>541</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_file</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>643</x>
+     <y>541</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

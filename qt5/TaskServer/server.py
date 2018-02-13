@@ -6,6 +6,7 @@
 from PyQt5.QtWidgets import QApplication, QWidget ,QMainWindow,QInputDialog,QFileDialog,QMessageBox,QTreeWidgetItem   #导入相应的包
 from PyQt5.QtNetwork import (QHostAddress, QTcpServer, QTcpSocket)
 from PyQt5 import QtCore
+from PyQt5.QtGui import QFont
 import sys
 import re
 import socketserver
@@ -14,6 +15,7 @@ from serverui import Ui_MainWindow
 from TcpServer import TcpServer
 from mysqldb import MySQLUtil
 from sqlite3db import Sqlite3Util
+from LuaEditor import PythonHighlighter
 
 PORT = 9008
 class TaskServerWindow(QMainWindow):
@@ -29,6 +31,13 @@ class TaskServerWindow(QMainWindow):
         self.ui.btn_send.clicked.connect(self.btnSendRemoteCmd)
         self.ui.btn_file.clicked.connect(self.btnAddScriptFile)
         self.ui.clientTreeWidget.itemClicked.connect(self.treeItemClicked)
+        self.ui.btn_run.clicked.connect(self.btnRunLua)
+
+        font = QFont("New Courier", 11)
+        self.ui.code_editor.setFont(font)
+        #high light the lua code
+        self.highlighter = PythonHighlighter(self.ui.code_editor.document())
+
 
         self.clientHandlerList = []
         self.clientNameList = []
@@ -110,6 +119,9 @@ class TaskServerWindow(QMainWindow):
                 statusStr += msg['msg'] + " \n"
 
         self.ui.content_status.setText(statusStr)
+
+    def btnRunLua(self):
+        pass
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
