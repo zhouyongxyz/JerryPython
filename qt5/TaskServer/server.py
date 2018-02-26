@@ -59,6 +59,9 @@ class TaskServerWindow(QMainWindow):
         self.treeRoot = QTreeWidgetItem(self.ui.clientTreeWidget);
         self.treeRoot.setText(0, '网络1')
         self.ui.clientTreeWidget.addTopLevelItem(self.treeRoot)
+        # self.clientConnect("1.2.3.4")
+        # self.clientConnect("2.2.3.5")
+
         pass
     # send cmd to client
     def btnSendRemoteCmd(self):
@@ -98,7 +101,7 @@ class TaskServerWindow(QMainWindow):
         index = self.ui.clientTreeWidget.topLevelItem(0).childCount()
         #self.ui.clientTreeWidget.topLevelItem(0).child(0).setText(0, _translate("MainWindow", ipAddr))
         item = QTreeWidgetItem(self.treeRoot);
-        item.setText(index,ipAddr)
+        item.setText(0,ipAddr)
 
     def recvMessage(self, ipAddr, msg):
         currentClient = self.ui.content_ipaddr.text()
