@@ -11,6 +11,7 @@ import sys
 import re
 import socketserver
 import _thread
+import json
 from serverui import Ui_MainWindow
 from TcpServer import TcpServer
 from mysqldb import MySQLUtil
@@ -120,7 +121,18 @@ class TaskServerWindow(QMainWindow):
 
         self.ui.content_status.setText(statusStr)
 
+    # send lua script to client
     def btnRunLua(self):
+        lua = self.ui.code_editor.toPlainText()
+        #print("lua :" + lua)
+        data = {}
+        data["action"] = "script"
+        data["lua"] = lua
+        print(json.dumps(data))
+        data = json.dumps(data)
+        print("len = {}" .format(len(data)))
+        head = "data-{:05d}".format(len(data))
+        self.tcpServer.sendLuaMessage(self.ui.content_ipaddr.text(), head + data)
         pass
 
 if __name__ == '__main__':

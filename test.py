@@ -8,13 +8,8 @@ class test(object):
         self.test = "test"
 
 def main():
-    aa = test(0,0)
-    print("aa.test = " + aa.test)
-    if not aa:
-        print("none none")
-    else:
-        print("aaa")
-    pass
+    aa = "{:04d}".format(45)
+    print(aa)
 
 if __name__ == '__main__':
     main()

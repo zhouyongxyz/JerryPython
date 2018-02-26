@@ -74,6 +74,19 @@ class TcpServer(QTcpServer):
         data.append("\n")
         self.clientSocketList[index].write(data)
 
+    def sendLuaMessage(self,ip,msg):
+        print("sendLuaMessage ip = " + ip + " msg = " + msg)
+        index = 0
+        for i in range(0,len(self.clientIpList)):
+            print("ip = " + self.clientIpList[i])
+            if self.clientIpList[i] == ip:
+                index = i
+        #index = self.clientIpList.index(ip)
+        print("sendMsg ip idx = " + str(index))
+        data = QByteArray()
+        data.append(msg)
+        self.clientSocketList[index].write(data)
+
     def recvMessage(self,ipAddr,msg):
         self.ui.recvMessage(ipAddr,msg)
         pass
